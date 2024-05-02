@@ -14,7 +14,7 @@ echo -e "\nAverage number of goals in all games from the winning teams:"
 echo "$($PSQL "SELECT SUM(winner_goals) / CAST(COUNT(*) AS NUMERIC) FROM games")"
 
 echo -e "\nAverage number of goals in all games from the winning teams rounded to two decimal places:"
-echo echo "$($PSQL "SELECT ROUND(SUM(winner_goals) / CAST(COUNT(*) AS NUMERIC), 2) FROM games")"
+echo "$($PSQL "SELECT ROUND(SUM(winner_goals) / CAST(COUNT(*) AS NUMERIC), 2) FROM games")"
 
 echo -e "\nAverage number of goals in all games from both teams:"
 echo "$($PSQL "SELECT (SUM(winner_goals) + SUM(opponent_goals)) / CAST(COUNT(*) AS NUMERIC) FROM games")"
